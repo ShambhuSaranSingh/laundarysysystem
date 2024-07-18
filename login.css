@@ -1,0 +1,118 @@
+body {
+    background-image: url('login.png');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#login {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    max-width: 400px;
+    width: 100%;
+}
+
+#login h2 {
+    color: #007bff;
+}
+
+#login h3 {
+    color: #343a40;
+}
+
+#login label {
+    font-weight: bold;
+    color: #343a40;
+}
+
+#login input[type="text"],
+#login input[type="email"],
+#login input[type="password"] {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#login button[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#signup {
+    display: none;
+}
+
+#signup.show {
+    display: block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 4px;
+}
+/* login.css */
+#login, #signup {
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the last value (alpha) to change transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for modern look */
+}
+
+#signup {
+    display: none; /* Initially hide the signup form */
+}
+
+/* Add more styling as needed */
+/* login.css */
+body {
+    background-image: url('i2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ensure full screen height */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Center the content vertically */
+}
+
+#login, #signup {
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the last value (alpha) to change transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for modern look */
+}
+
+#signup {
+    display: none; /* Initially hide the signup form */
+}
+
+/* Add more styling as needed */

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Services</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all 0.2s linear;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #262626;
+            color: #fff;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        }
+
+        header {
+            background: linear-gradient(to right, #0056b3, #007bff);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex-wrap: wrap;
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 5px;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.2s;
+        }
+
+        header nav ul li a:hover {
+            color: #ffc107;
+        }
+
+        .container {
+            background: linear-gradient(45deg, blueviolet, lightgreen);
+            padding: 20px 9%;
+            padding-bottom: 100px;
+        }
+
+        .heading {
+            text-align: center;
+            padding-bottom: 15px;
+            color: #fff;
+            text-shadow: 0 5px 10px rgba(0,0,0,.2);
+            font-size: 50px;
+        }
+
+        .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .box {
+            box-shadow: 0 5px 10px rgba(0,0,0,.2);
+            border-radius: 5px;
+            background: #fff;
+            text-align: center;
+            padding: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+            max-width: 150px;
+            max-height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .box h3 {
+            color: #444;
+            font-size: 22px;
+            padding: 10px 0;
+        }
+
+        .box p {
+            color: #777;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .box .btn {
+            margin-top: 10px;
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            font-size: 17px;
+            border-radius: 5px;
+            padding: 8px 25px;
+            cursor: pointer;
+        }
+
+        .box .btn:hover {
+            letter-spacing: 1px;
+        }
+
+        .box:hover {
+            box-shadow: 0 10px 15px rgba(0,0,0,.3);
+            transform: scale(1.03);
+        }
+
+        @media (max-width:768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.avif" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="contact.html" class="text-white">Home</a></li>
+                        <li><a href="price.html" class="text-white">Product</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="form.html" class="text-white">Cart</a></li>
+                        <li><a href="feedback.html" class="text-white">feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="heading">Explore Our Services</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="icon-1.png" alt="Washing">
+                <h3>Washing</h3>
+                <p>Get your clothes washed with care and efficiency.</p>
+                <a href="#" class="btn" onclick="toggleContent(1)">Read More</a>
+                <p id="content1" style="display:none;">Additional content about washing.</p>
+            </div>
+            <div class="box">
+                <img src="icon-2.png" alt="Dry Cleaning">
+                <h3>Dry Cleaning</h3>
+                <p>High-quality dry cleaning services for delicate garments.</p>
+                <a href="#" class="btn" onclick="toggleContent(2)">Read More</a>
+                <p id="content2" style="display:none;">Additional content about dry cleaning.</p>
+            </div>
+            <div class="box">
+                <img src="icon-3.png" alt="Ironing">
+                <h3>Ironing</h3>
+                <p>Perfectly ironed clothes, ready to wear.</p>
+                <a href="#" class="btn" onclick="toggleContent(3)">Read More</a>
+                <p id="content3" style="display:none;">Additional content about ironing.</p>
+            </div>
+            <div class="box">
+                <img src="icon-4.png" alt="Stain Removal">
+                <h3>Stain Removal</h3>
+                <p>Specialized in removing tough stains for fresh clothes.</p>
+                <a href="#" class="btn" onclick="toggleContent(4)">Read More</a>
+                <p id="content4" style="display:none;">Additional content about stain removal.</p>
+            </div>
+            <div class="box">
+                <img src="icon-5.png" alt="Alterations">
+                <h3>Alterations</h3>
+                <p>Alterations and repairs services available.</p>
+                <a href="#" class="btn" onclick="toggleContent(5)">Read More</a>
+                <p id="content5" style="display:none;">Additional content about alterations.</p>
+            </div>
+            <div class="box">
+                <img src="icon-6.png" alt="Pick-Up & Delivery">
+                <h3>Pick-Up & Delivery</h3>
+                <p>Convenient pick-up and delivery services.</p>
+                <a href="#" class="btn" onclick="toggleContent(6)">Read More</a>
+                <p id="content6" style="display:none;">Additional content about pick-up & delivery.</p>
+            </div>
+            <div class="box">
+                <img src="icon-7.png" alt="New Service">
+                <h3>New Service</h3>
+                <p>Explore our new cutting-edge service designed to improve your experience.</p>
+                <a href="#" class="btn" onclick="toggleContent(7)">Read More</a>
+                <p id="content7" style="display:none;">Additional content about new service.</p>
+            </div>
+            <div class="box">
+                <img src="transport.jpg" alt="Eco-Friendly Solutions">
+                <h3>Delivery Service</h3>
+                <p>Easy and fast delivery.</p>
+                <a href="#" class="btn" onclick="toggleContent(8)">Read More</a>
+                <p id="content8" style="display:none;">Additional content about delivery service.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById("content" + id);
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

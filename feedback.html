@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-HgO/9D1TTAmgFgd76L8rO/yz+oAnZCmfvw3zq1+zvFp9ShsGrYeEMkg1WQY8AVvRdZ+TcdZCwssq3zq+dJL3yQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      background-color: #f0f2f5; /* Updated background color */
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background: linear-gradient(to right, #003366, #66ccff); /* Updated gradient colors */
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    header nav ul li {
+      margin-right: 20px;
+    }
+
+    header nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    header nav ul li a:hover {
+      color: #ffcc00; 
+    }
+
+    .container {
+      width: 30%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    button {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #cccccc;
+      border-radius: 8px;
+      transition: border-color 0.3s ease-in-out;
+      box-sizing: border-box;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    button:focus {
+      outline: none;
+      border-color: #006699; 
+    }
+
+    button {
+      background-color: #003366; 
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #ffcc00; 
+    }
+
+    footer {
+      justify-content: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .rating {
+      display: flex;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      background-image: url('star-empty.png'); 
+      background-size: cover;
+      transition: background-color 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      header nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header nav ul li {
+        margin-bottom: 10px;
+      }
+
+      .container {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.avif" alt="Logo"> 
+    <nav>
+      <ul>
+        <li><a href="contact.html" class="text-white">Home</a></li>
+                        <li><a href="price.html" class="text-white">Product</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="form.html" class="text-white">Cart</a></li>
+                        <li><a href="feedback.html" class="text-white">feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h2 class="mb-4">Feedback Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Feedback:</label>
+        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="rating" class="form-label">Rating:</label>
+        <div class="rating">
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label for="star5"></label>
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label for="star4"></label>
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label for="star3"></label>
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label for="star2"></label>
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label for="star1"></label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Feedback</button>
+    </form>
+  </div>
+  <footer>
+    <p>© 2024 Modern Laundry System. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript (Optional for handling form submission) -->
+  <script>
+    const stars = document.querySelectorAll('.rating input');
+    stars.forEach(star => {
+      star.addEventListener('change', function() {
+        // Perform any necessary action when a star is selected
+        console.log('Selected rating:', this.value);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Laundry System</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-image: url('oo.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+            margin-top: 70px; /* Adjusted margin-top to account for the fixed navbar */
+        }
+
+        .navbar {
+            background-color: #0062cc;
+            box-shadow: 0 2px 4px rgba(0,0,0,.4);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-brand img {
+            width: 70px;
+            margin-right: 10px;
+            animation: logoAnimation 1.5s infinite alternate; /* Logo animation */
+        }
+
+        @keyframes logoAnimation {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,.2);
+        }
+
+        footer {
+            background-color: #212529;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 1em;
+            border-top: 4px solid #0062cc;
+            box-shadow: 0 -2px 4px rgba(0,0,0,.4);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            margin-right: 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-nav .nav-link:hover, .navbar-nav .active .nav-link {
+            color: #aadbff !important;
+        }
+
+        /* Custom styling for input boxes */
+        input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #ced4da;
+            background-color: transparent;
+            padding: 5px 0;
+            margin-bottom: 15px;
+            width: 100px;
+            font-size: 16px;
+            color: #333;
+            transition: border-color 0.2s ease-in-out;
+            display: inline-block; /* Display input boxes inline */
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #80bdff;
+        }
+
+        /* Adjust layout for checkboxes and labels */
+        .form-group {
+            display: inline-block;
+            margin-right: 20px;
+            width: 150px; /* Adjusted width for better layout */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.avif" alt="Laundry Logo">Modern Laundry System
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="price.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="form.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Form Section -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 form-container">
+                <h2 class="text-center mb-4">Select Items</h2>
+                <form id="frm-select-items" action="javascript:void(0);" onsubmit="return submitForm()">
+                    <div class="form-group">
+                        <label for="jeans">Jeans</label>
+                        <input type="checkbox" id="jeans" name="items[]" value="Jeans" onclick="updateCount('jeansCount')">
+                        <input type="text" id="jeansCount" value="0" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="lower">Lower</label>
+                        <input type="checkbox" id="lower" name="items[]" value="Lower" onclick="updateCount('lowerCount')">
+                        <input type="text" id="lowerCount" value="0" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="shirt">Shirt</label>
+                        <input type="checkbox" id="shirt" name="items[]" value="Shirt" onclick="updateCount('shirtCount')">
+                        <input type="text" id="shirtCount" value="0" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="tshirt">T-Shirt</label>
+                        <input type="checkbox" id="tshirt" name="items[]" value="T-Shirt" onclick="updateCount('tshirtCount')">
+                        <input type="text" id="tshirtCount" value="0" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="pant">Pant</label>
+                        <input type="checkbox" id="pant" name="items[]" value="Pant" onclick="updateCount('pantCount')">
+                        <input type="text" id="pantCount" value="0" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="cover">Cover</label>
+                        <input type="checkbox" id="cover" name="items[]" value="Cover" onclick="updateCount('coverCount')">
+                        <input type="text" id="coverCount" value="0" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="bedsheet">Bed Sheet</label>
+                        <input type="checkbox" id="bedsheet" name="items[]" value="Bed Sheet" onclick="updateCount('bedsheetCount')">
+                        <input type="text" id="bedsheetCount" value="0" readonly>
+                    </div>
+                    <!-- Additional items -->
+                    <div class="form-group">
+                        <label for="pillow">Pillow</label>
+                        <input type="checkbox" id="pillow" name="items[]" value="Pillow" onclick="updateCount('pillowCount')">
+                        <input type="text" id="pillowCount" value="0" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="blanket">Blanket</label>
+                        <input type="checkbox" id="blanket" name="items[]" value="Blanket" onclick="updateCount('blanketCount')">
+                        <input type="text" id="blanketCount" value="0" readonly>
+                    </div>
+                    <!-- End of additional items -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2024 Modern Laundry System. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and additional scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function updateCount(inputId) {
+            var countInput = document.getElementById(inputId);
+            var count = parseInt(countInput.value);
+            count++;
+            if (count > 8) {
+                alert('Maximum 8 items allowed!');
+                countInput.checked = false;
+                count = 8;
+            }
+            countInput.value = count;
+        }
+
+        function submitForm() {
+            var selectedItems = {};
+            var checkboxes = document.querySelectorAll('input[name="items[]"]:checked');
+            if (checkboxes.length === 0) {
+                alert('Please select at least one item.');
+                return false;
+            }
+            if (checkboxes.length > 8) {
+                alert('You can select maximum 8 items.');
+                return false;
+            }
+            checkboxes.forEach(function(checkbox) {
+                var itemName = checkbox.value;
+                if (selectedItems[itemName]) {
+                    selectedItems[itemName]++;
+                } else {
+                    selectedItems[itemName] = 1;
+                }
+            });
+            var token = Math.random().toString(36).substr(2, 10);
+            var currentDate = new Date().toISOString().split('T')[0];
+            var slipMessage = 'Selected items:\n';
+            for (var item in selectedItems) {
+                slipMessage += item + ': ' + selectedItems[item] + '\n';
+            }
+            var tokenMessage = 'Token: ' + token + '\nDate: ' + currentDate;
+            alert(slipMessage + '\n\n' + tokenMessage);
+            return false;
+        }
+    </script>
+</body>
+</html>

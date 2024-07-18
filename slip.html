@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slip Generated</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        .slip-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .slip-message {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .token-message {
+            font-size: 1.1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container slip-container">
+        <h2 class="text-center mb-4">Slip Generated</h2>
+        <p id="slip-message" class="slip-message"></p>
+        <p id="token-message" class="token-message"></p>
+        <div class="text-center">
+            <a href="logn.html" class="btn btn-primary">Back to Home</a> <!-- Link to go back to home -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for displaying slip and token -->
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        var items = urlParams.getAll('itm[]'); // Get selected items from URL
+        var token = Math.random().toString(36).substr(2, 10); // Generate random token
+        var itemCount = items.length;
+        var slipMessage = 'Slip generated with ' + itemCount + ' items:\n' + items.join('\n'); // Formatted slip message
+        var tokenMessage = 'Your token is: ' + token;
+        document.getElementById('slip-message').innerText = slipMessage;
+        document.getElementById('token-message').innerText = tokenMessage;
+    </script>
+</body>
+</html>
